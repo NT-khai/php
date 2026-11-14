@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'email',
@@ -17,9 +20,6 @@ class User extends Model
         'is_active',
     ];
 
-    /**
-     * Một user có nhiều sản phẩm
-     */
     public function products()
     {
         return $this->hasMany(Product::class);
