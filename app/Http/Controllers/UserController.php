@@ -75,6 +75,7 @@ class UserController extends Controller
      */
     public function delete(int $id)
     {
+        $this->authorize();
         $this->userService->delete($id);
 
         return response()->json([

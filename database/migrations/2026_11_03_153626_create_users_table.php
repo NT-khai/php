@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->text('address')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->string("role")->default("user");
             $table->rememberToken();
             $table->timestamps();
         });
